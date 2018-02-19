@@ -8,7 +8,7 @@ package pack_db_engine;
 	public class Goal3 {
 
 		public void Goal_head() {
-		       String csvFile = "/home/sapient/Downloads/ipl.csv";
+		       //String csvFile = "/home/sapient/Documents/workspace-sts-3.9.2.RELEASE/db_engine/src/pack_db_engine/ipl.csv";
 		        BufferedReader br = null;
 		        String csvSplitBy = ",";
 
@@ -17,7 +17,7 @@ package pack_db_engine;
 		        	String strArray1[] = new String[18];
 	                String heading=null;
 	                String type=null;
-		            br = new BufferedReader(new FileReader(csvFile));
+		            br = new BufferedReader(new FileReader("ipl.csv"));
 		            heading = br.readLine();
 		            type = br.readLine();
 		            strArray= heading.split(csvSplitBy);
@@ -28,7 +28,7 @@ package pack_db_engine;
 		            	try
 		            	{   
 		            	    Integer.parseInt(strArray1[i]);
-		            	    System.out.println("It is of Integer type");
+		            	    System.out.println("Number");
 		            	}
 		            	catch(NumberFormatException e)
 		            	{
@@ -36,13 +36,13 @@ package pack_db_engine;
 		            	Matcher m= p.matcher(strArray1[i]);
 		            	Boolean a=m.matches();
 		            	if(a.equals(true))
-		            	System.out.println("It is of Date type");
+		            	System.out.println("Date");
 		            	else
-		            	System.out.println("It is of String type");
+		            	System.out.println("String");
 		            	}
 		            	catch(ArrayIndexOutOfBoundsException e)
 		            	{
-		            		System.out.println("Empty field");
+		            		System.out.println("NULL");
 		            	}
 		            }
 		        } catch (FileNotFoundException e) {

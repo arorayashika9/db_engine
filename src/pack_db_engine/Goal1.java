@@ -11,7 +11,8 @@ package pack_db_engine;
 		 String query=null;
 		 String first=null;
 		 String last=null;
-	 ArrayList<String> token=new ArrayList<String>();
+		 ArrayList<String> token=new ArrayList<String>();
+		 static ArrayList<String> condition=new ArrayList<String>();
 	 public void token1() {
 		 String words=null;
 		 System.out.println("Enter the query:");
@@ -60,7 +61,7 @@ package pack_db_engine;
 	public void selectInfo() {
 			System.out.println("selected fields/information from the given query");
 			int index3=token.indexOf("from");
-			ArrayList<String> condition=new ArrayList<String>();
+			//ArrayList<String> condition=new ArrayList<String>();
 			condition.addAll(token.subList(1, index3));
 			Iterator<String> iterator= condition.iterator();
 			while(iterator.hasNext()) {
@@ -92,47 +93,31 @@ package pack_db_engine;
 		        System.out.println(m.group());
 	}
 	public void test() {
-		    String csvFile = "/home/sapient/Downloads/ipl.csv";
+		    String csvFile = "ipl.csv";
 	        BufferedReader br = null;
-	        String csvSplit = ",";
+	       String csvSplit = ",";
 	        String line = "";
-	        String heading=null;
-			String [] arr= query.split(" ");
-		//	int l=0;
-			int k=0;
+	      
+			
 			  try {
 				   br = new BufferedReader(new FileReader(csvFile));
-		            heading=br.readLine();
-		        	String[] words = heading.split("csvSplit");
-			    
-		/*	    for(int i=0;i<arr.length;i++)
-		         {  
-			    	if(arr[i].equals("from"))
-		        	{
-		        	  l=i-1;
-		        	 System.out.println("selected fields/information from the given query");
-		        	 for(int x=1;x<=l;x++)
-		        	 {
-		        		System.out.println(arr[x]); 
-		        	 }
-		        	}
-		         }*/
-		      
-		         
-		            for(int i=0;i<4;i++) {
-		            	for(int j=0;j<18;j++) {
-		            		if((arr[i].replace("csvSplit","")).equals(words[j])) {
-		            	     k=j;
-		            	     System.out.println(k);
+		           
+		        	
 		            	 while ((line = br.readLine()) != null) 
 		     	            {
-		     	                String[] str = line.split(csvSplit);
-		     	                System.out.println(str[k]);
-		     	            }  
-		            		}
-		            	}
-		            }
+	     	                //String[] str = line.split(csvSplit);
+		     	                System.out.println(line);
+	     	            }  
+		            	 while ((line = br.readLine()) != null) 
+		     	            {
+	     	               String[] str = line.split(csvSplit);
+		     	                System.out.println(str[1]);
+	     	            }  
+		            		
+		            	
+	            
 		        	
+	        	
 			        } 
 		        catch(Exception e) {
 		        	System.out.println(e);

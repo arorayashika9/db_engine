@@ -5,8 +5,7 @@ public class Index {
 		public static void main(String args[])
 		{    
 			
-			 Goal3 obj3=new Goal3();
-			 obj3.Goal_head();
+			 
 			 Goal1 g1=new Goal1();
 			
 			 g1.token1();
@@ -26,6 +25,8 @@ public class Index {
 			 g1.group();
 			 //task 9
 			 g1.aggregate();
+			 Goal3 obj3=new Goal3();
+			 obj3.Goal_head();
 //			 Goal56 
 			 g1.test();
 		}
