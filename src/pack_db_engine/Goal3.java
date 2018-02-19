@@ -8,7 +8,7 @@ package pack_db_engine;
 	public class Goal3 {
 
 		public void Goal_head() {
-		       //String csvFile = "/home/sapient/Documents/workspace-sts-3.9.2.RELEASE/db_engine/src/pack_db_engine/ipl.csv";
+		       String csvFile = "ipl.csv";
 		        BufferedReader br = null;
 		        String csvSplitBy = ",";
 
@@ -17,7 +17,7 @@ package pack_db_engine;
 		        	String strArray1[] = new String[18];
 	                String heading=null;
 	                String type=null;
-		            br = new BufferedReader(new FileReader("ipl.csv"));
+		            br = new BufferedReader(new FileReader(csvFile));
 		            heading = br.readLine();
 		            type = br.readLine();
 		            strArray= heading.split(csvSplitBy);
